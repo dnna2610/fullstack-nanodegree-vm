@@ -1,0 +1,26 @@
+{% extends "main.html" %} {% block content %}
+<div class="col-md-8 offset-md-2">
+    <h2>Create new item</h2>
+    <form action="#" method="post">
+        <div class="form-group">
+            <label for="name">Item Name</label>
+            <input type="text" maxlength="100" name="name" required class="form-control" placeholder="Name">
+        </div>
+        <div class="form-group">
+            <label for="catalog_id">Select category</label>
+            <select class="form-control" name="catalog_id" required>
+            {% for catalog in catalogs %}
+                    <option value="{{ catalog.id }}">{{ catalog.name }}</option>
+                {% endfor %}
+        </select>
+        </div>
+        <div class="form-group">
+            <label for="description">Item description</label>
+            <textarea class="form-control" name="description" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-outline-primary" id="submit">
+        <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>Create
+    </button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Bootstrap -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7"
+        crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/tether.min.js') }}" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8"
+        crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi"
+        crossorigin="anonymous">
+    <!-- Title -->
+    <title>Catalog App</title>
+    <div>
+        {% block script %}
+        {% endblock %}
+    </div>
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <div class="header clearfix">
+            <nav>
+                <ul class="nav nav-pills float-xs-right">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('showCatalog') }}">Home</a>
+                    </li>
+                    {% if logged_in %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('gdisconnect') }}">Log Out</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('showLogin') }}">Log In</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+            <h3 class="text-muted">Catalog App</h3>
+        </div>
+        <hr>
+        <div>
+            {% block content %} {% endblock %}
+        </div>
+    </div>
+</body>
+
+</html>

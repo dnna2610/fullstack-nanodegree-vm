@@ -1,0 +1,23 @@
+{% extends "main.html" %} {% block content %}
+<div class="card">
+    <div class="card-header">
+        {{item.catalog.name}}
+    </div>
+    <div class="card-block">
+        <h4 class="card-title">{{ item.name }} </h4>
+        <p class="card-text">{{ item.description }}</p>
+    </div>
+</div>
+<div class="card card-block text-xs-center">
+    <h4 class="card-title">Confirmation</h4>
+    <p class="card-text">Are you sure you want to delete this item?</p>
+    <div class="col-md-2 offset-md-4">
+        <a href="#" class="btn col-md-12 btn-outline-secondary">No</a>
+    </div>
+    <div class="col-md-2">
+        <form method="POST">
+            <button type="submit" class="btn col-md-12 btn-outline-danger">Yes</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
