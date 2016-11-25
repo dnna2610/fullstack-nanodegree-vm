@@ -1,3 +1,6 @@
+import sys
+sys.path.insert(0, '/var/www/html/catalog')
+
 from flask import Flask, render_template, request, redirect, jsonify, url_for, flash
 app = Flask(__name__)
 
