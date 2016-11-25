@@ -26,15 +26,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('showCatalog') }}">Home</a>
                     </li>
-                    {% if logged_in %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('gdisconnect') }}">Log Out</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('showLogin') }}">Log In</a>
-                    </li>
-                    {% endif %}
                 </ul>
             </nav>
             <h3 class="text-muted">Catalog App</h3>
