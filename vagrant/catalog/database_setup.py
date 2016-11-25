@@ -49,5 +49,5 @@ class Item(Base):
            'created'    : self.created_date
        }
 
-engine = create_engine('sqlite:///catalogitem.db')
+engine = create_engine('postgresql://catalog:udacity@localhost/catalog')
 Base.metadata.create_all(engine)
